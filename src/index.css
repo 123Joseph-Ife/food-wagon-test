@@ -1,0 +1,48 @@
+@font-face {
+  font-family: Sans;
+  src: url(../font/static/SourceSans3-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: SansItalic;
+  src: url(../font/static/SourceSans3-BlackItalic.ttf);
+}
+
+:root {
+  font-family: Sans;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+img {
+  vertical-align: middle;
+  font-family: SansItalic;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
