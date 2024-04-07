@@ -28,7 +28,7 @@ const LandingPage = () => {
                     fill="#FF7A7A"
                     stroke="url(#paint1_linear_403_1440)"
                     strokeWidth="2"
-                  />
+                  />                                  
                   <path
                     d="M83 86C70.3178 86 60 75.6822 60 63C60 50.3178 70.3178 40 83 40C95.6822 40 106 50.3178 106 63C106 75.6822 95.6822 86 83 86Z"
                     fill="white"
