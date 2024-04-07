@@ -37,7 +37,7 @@ function App() {
     {
       id: 1,
       alt: "first-gray",
-      path: "src/assets/Gray's Vage/first-gray.png",
+      path: "src/assets/Gray's Vage/firstgray.JPG",
       price: 5.0,
       percent: 15,
       days: 6,
