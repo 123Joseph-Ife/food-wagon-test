@@ -143,7 +143,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="right">
-        <img src="src/assets/mac.png" alt="macaroni" width="530px" />
+        <img src="mac.png" alt="macaroni" width="530px" />
       </div>
     </div>
   );
