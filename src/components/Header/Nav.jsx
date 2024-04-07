@@ -138,7 +138,7 @@ const Nav = () => {
           </svg>
           <span>Search Food</span>
         </div>
-        <Link to="/login" target="_blank">
+        <Link to="/login">
           <button className="btn-login">
             <svg
               width="15"
