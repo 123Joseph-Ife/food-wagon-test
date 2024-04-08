@@ -25,7 +25,7 @@ const FeaturedRestaurants = ({ featuredRestaurants }) => {
               <div className="text-part">
                 <p className="restaurant-name">{restaurant.restaurant}</p>
                 <div className="rating">
-                  <img src="src/assets/star.png" alt="star" width="20px" />
+                  <img src="/star.png" alt="star" width="20px" />
                   {restaurant.ratings}
                 </div>
               </div>

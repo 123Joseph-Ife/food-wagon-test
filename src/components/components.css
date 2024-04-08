@@ -491,7 +491,7 @@ p {
   justify-content: center;
   align-items: center;
   padding: 20px 150px 0 150px;
-  background-image: url("src/assets/Install App/back.png");
+  background-image: url("/Install App/back.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -653,7 +653,7 @@ p {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background: url("src/assets/CTA/cta.jpeg");
+  background: url("/CTA/cta.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -895,7 +895,7 @@ p {
   }
 
   .cta {
-    background-image: url("src/assets/CTA/mobile-cta.png");
+    background-image: url("/CTA/mobile-cta.png");
   }
 }
 @media (max-width: 450px) {

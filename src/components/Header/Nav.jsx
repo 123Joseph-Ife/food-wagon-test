@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <nav>
       <div className="name">
-        <img src="src/assets/mask.png" alt="hamburger" width="30px" />
+        <img src="/mask.png" alt="hamburger" width="30px" />
         <div className="text">
           <span className="red">food</span>
           <span className="yellow">wagon</span>

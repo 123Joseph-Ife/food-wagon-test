@@ -55,7 +55,7 @@ const Login = ({
             }}
             className="google-btn"
           >
-            <img src="src\assets\google.png" alt="Google Logo" width="30px" />
+            <img src="\google.png" alt="Google Logo" width="30px" />
             <span>sign up with google</span>
           </button>
         </form>
