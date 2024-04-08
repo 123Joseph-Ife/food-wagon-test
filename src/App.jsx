@@ -238,7 +238,7 @@ function App() {
   const aboutFood = [
     {
       id: 1,
-      path: "src/assets/About Foods/spicy-pizza.png",
+      path: "public/About Foods/sandwitch.png",
       title: "Pizza",
       heading: "Best deals",
       orange: "Crispy Sandwiches",
@@ -246,7 +246,7 @@ function App() {
     },
     {
       id: 2,
-      path: "src/assets/About Foods/fried-chicken.png",
+      path: "public/About Foods/fried-chicken.png",
       title: "Chicken",
       heading: "Celebrate parties with",
       orange: "Fried Chicken",
@@ -254,7 +254,7 @@ function App() {
     },
     {
       id: 3,
-      path: "src/assets/About Foods/sandwitch.png",
+      path: "public/About Foods/sandwitch.png",
       title: "Sand witch",
       heading: "Wanna eat hot & spicy",
       orange: "Pizza?",
