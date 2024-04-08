@@ -45,7 +45,7 @@ function App() {
     {
       id: 2,
       alt: "second-gray",
-      path: "/Gray's Vage/second-gray.png",
+      path: "/GrayVage/second-gray.png",
       price: 10.5,
       percent: 10,
       days: 6,
@@ -53,7 +53,7 @@ function App() {
     {
       id: 3,
       alt: "third-gray",
-      path: "/Gray's Vage/third-gray.png",
+      path: "/GrayVage/third-gray.png",
       price: 8.0,
       percent: 25,
       days: 7,
@@ -61,7 +61,7 @@ function App() {
     {
       id: 4,
       alt: "fourth-gray",
-      path: "/Gray's Vage/fourth-gray.png",
+      path: "/GrayVage/fourth-gray.png",
       price: 9.0,
       percent: 20,
       days: 8,
