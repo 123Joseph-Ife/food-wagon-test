@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const GraysVageCards = ({ listOfGray }) => {
+
   return (
     <div className="grayWrapper">
       {listOfGray.map((gray) => (
