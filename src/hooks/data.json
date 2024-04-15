@@ -1,0 +1,36 @@
+{
+  "listOfGray": [
+    {
+      "id": 1,
+      "alt": "first-gray",
+      "path": "/GrayVage/first-gray.png",
+      "price": 5.0,
+      "percent": 15,
+      "days": 6
+    },
+    {
+      "id": 2,
+      "alt": "second-gray",
+      "path": "/GrayVage/second-gray.png",
+      "price": 10.5,
+      "percent": 10,
+      "days": 6
+    },
+    {
+      "id": 3,
+      "alt": "third-gray",
+      "path": "/GrayVage/third-gray.png",
+      "price": 8.0,
+      "percent": 25,
+      "days": 7
+    },
+    {
+      "id": 4,
+      "alt": "fourth-gray",
+      "path": "/GrayVage/fourth-gray.png",
+      "price": 9.0,
+      "percent": 20,
+      "days": 8
+    }
+  ]
+}

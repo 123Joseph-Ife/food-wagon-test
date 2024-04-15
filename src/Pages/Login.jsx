@@ -1,14 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useSignIn } from "../hooks/useSignIn";
 
-const Login = ({
-  email,
-  setEmail,
-  pass,
-  setPass,
-  signInWithEmail,
-  signInWithGoogle,
-}) => {
-  const naviate = useNavigate();
+const Login = () => {
+  const { signInWithEmail, signInWithGoogle, setEmail, setPass, email, pass } =
+    useSignIn();
+
   return (
     <div className="login-container">
       <div className="Login">
@@ -41,7 +36,6 @@ const Login = ({
           <button
             onClick={() => {
               signInWithEmail();
-              naviate("/");
             }}
             className="create-button"
           >
@@ -51,7 +45,6 @@ const Login = ({
           <button
             onClick={() => {
               signInWithGoogle();
-              naviate("/");
             }}
             className="google-btn"
           >

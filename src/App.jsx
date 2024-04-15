@@ -3,41 +3,26 @@ import "./components/components.css";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useLoginData } from "./hooks/useLoginData";
 import Missing from "./Pages/Missing";
 import VagePage from "./Pages/VagePage";
 import ViewAll from "./Pages/ViewAll";
-import { googleProvider, auth } from "./config/firebase.";
-import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
+import MiniHome from "./Pages/Mini App/MiniHome";
+import Settings from "./Pages/Mini App/Settings";
+import Dashboard from "./Pages/Mini App/Dashboard";
+import Aside from "./components/Mini App Components/Aside";
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [background, setBackground] = useState("dark");
+  const [click, setClick] = useState("unclicked");
 
-  const signInWithEmail = async () => {
-    try {
-      if (pass.length > 6) {
-        await createUserWithEmailAndPassword(auth, email, pass);
-      }
-    } catch (error) {
-      console.log(error);
-      alert("This account already exists");
-    }
-  };
-
-  const signInWithGoogle = async () => {
-    try {
-      await signInWithPopup(auth, googleProvider);
-    } catch (error) {
-      console.log(error);
-      alert("This account already exists");
-    }
-  };
+  const { isAuth } = useLoginData();
 
   const listOfGray = [
     {
       id: 1,
       alt: "first-gray",
-      path: "/GrayVage/firstgray.JPG",
+      path: "/GrayVage/first-gray.png",
       price: 5.0,
       percent: 15,
       days: 6,
@@ -191,8 +176,7 @@ function App() {
       id: 5,
       path: "/Restaurants/brisket.png",
       alt: "Brisket",
-      restaurantLogo:
-        "/Restaurants/Restaurant Logos/ruby-tuesday.png",
+      restaurantLogo: "/Restaurants/Restaurant Logos/ruby-tuesday.png",
       restaurant: "Ruby Tuesday",
       restaurantAlt: "Ruby Tuesday",
       ratings: 26,
@@ -203,8 +187,7 @@ function App() {
       id: 6,
       path: "/Restaurants/chicken-plantain.png",
       alt: "Chicken Plantain",
-      restaurantLogo:
-        "/Restaurants/Restaurant Logos/kuakata-fried-chicken.png",
+      restaurantLogo: "/Restaurants/Restaurant Logos/kuakata-fried-chicken.png",
       restaurant: "Kuakata Chicken",
       restaurantAlt: "Kuakata Fried Chicken",
       ratings: 53,
@@ -262,44 +245,70 @@ function App() {
     },
   ];
 
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                listOfGray={listOfGray}
-                featuresList={featuresList}
-                popularList={popularList}
-                featuredRestaurants={featuredRestaurants}
-                aboutFood={aboutFood}
-              />
-            }
-          />
-          <Route
-            path="/login/"
-            element={
-              <Login
-                email={email}
-                pass={pass}
-                setEmail={setEmail}
-                setPass={setPass}
-                signInWithEmail={signInWithEmail}
-                signInWithGoogle={signInWithGoogle}
-              />
-            }
-          />
-          <Route path="/:id" element={<VagePage listOfGray={listOfGray} />} />
-          <Route
-            path="/viewall"
-            element={<ViewAll featuredRestaurants={featuredRestaurants} />}
-          />
-          <Route path="*" element={<Missing />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+  if (isAuth) {
+    return (
+      <div className={background === "light" ? "minilightapp" : "miniapp"}>
+        <BrowserRouter>
+          <Aside click={click} setClick={setClick} />
+          <Routes>
+            <Route
+              path="/"
+              element={<MiniHome click={click} setClick={setClick} />}
+            />
+            <Route path="/minihome" element={<MiniHome />} />
+            <Route
+              path="/settings"
+              element={
+                <Settings
+                  click={click}
+                  setClick={setClick}
+                  background={background}
+                  setBackground={setBackground}
+                />
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={<Dashboard click={click} setClick={setClick} />}
+            />
+            <Route path="*" element={<Missing />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  listOfGray={listOfGray}
+                  featuresList={featuresList}
+                  popularList={popularList}
+                  featuredRestaurants={featuredRestaurants}
+                  aboutFood={aboutFood}
+                />
+              }
+            />
+            <Route
+              path="/login/"
+              element={
+                <Login />
+              }
+            />
+            <Route path="/:id" element={<VagePage listOfGray={listOfGray} />} />
+            <Route
+              path="/viewall"
+              element={<ViewAll featuredRestaurants={featuredRestaurants} />}
+            />
+            <Route path="*" element={<Missing />} />
+          </Routes>
+        </BrowserRouter>
+      </>
+    );
+  }
 }
 export default App;
